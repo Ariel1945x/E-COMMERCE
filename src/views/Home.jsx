@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
-import { getAllProductsThunk } from "../store/slices/Products.slice"
+import { getAllProductsThunk } from "../store/slices/products.slice"
 import axios from "axios";
 
 import Row from 'react-bootstrap/Row';

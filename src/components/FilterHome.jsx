@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { getFilterCategoryProductsThunk } from '../store/slices/Products.slice';
+import { getFilterCategoryProductsThunk } from '../store/slices/products.slice';
 
 import ListGroup from 'react-bootstrap/ListGroup';
 

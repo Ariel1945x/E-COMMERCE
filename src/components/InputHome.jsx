@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux'; 
 import { useState } from 'react';
-import { getFilterTitleProductsThunk } from '../store/slices/Products.slice';
+import { getFilterTitleProductsThunk } from '../store/slices/products.slice';
 
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';

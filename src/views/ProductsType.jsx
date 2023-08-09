@@ -1,7 +1,7 @@
 import { useParams, Navigate } from "react-router-dom" 
 import { useEffect, useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
-import { getFilterCategoryProductsThunk } from "../store/slices/Products.slice"
+import { getFilterCategoryProductsThunk } from "../store/slices/products.slice"
 import { addProductSelected } from "../store/slices/selectedProduct.slice"
 import axios from "axios"
 
