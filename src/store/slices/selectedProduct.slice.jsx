@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { setLoader } from './loader.slice';
 
 export const selectedSlice = createSlice({
     name: 'selectedProduct',
@@ -35,21 +36,28 @@ export const putProductsSelected = (id, quantity) => (dispatch) => {
         quantity: quantity
     }
 
+    dispatch(setLoader(true))
+
     axios
         .put(`https://e-commerce-api-v2.academlo.tech/api/v1/cart/${id}`, data, {
             headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
         })
         .then(() => dispatch( getProductsSelected() ))
         .catch(error => console.log(error))
+        .finally(() => dispatch(setLoader(false)))
 }
 
 export const deleteProductsSelected = id => (dispatch) => {
+
+    dispatch(setLoader(true))
+
     axios
         .delete(`https://e-commerce-api-v2.academlo.tech/api/v1/cart/${id}`, {
             headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
         })
         .then(() => dispatch( getProductsSelected() ))
         .catch(error => console.log(error))
+        .finally(() => dispatch(setLoader(false)))
 }
 
 export const purchasesProductThunk = () => (dispatch) => {
