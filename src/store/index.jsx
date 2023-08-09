@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import products from './slices/Products.slice'
+import products from './slices/products.slice'
 import loading from './slices/loader.slice'
 import selectedProduct from './slices/selectedProduct.slice'
 
