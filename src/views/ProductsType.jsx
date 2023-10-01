@@ -27,7 +27,7 @@ const ProductType = () => {
 
     const detail = () => {
         axios    
-            .get(`https://e-commerce-api-v2.academlo.tech/api/v1/products/${id}`)
+            .get(`https://api-ecommerce-1.onrender.com/products/${id}`)
             .then(resp => {
                 setproduct(resp.data),
                 dispatch(getFilterCategoryProductsThunk(resp.data.categoryId))
