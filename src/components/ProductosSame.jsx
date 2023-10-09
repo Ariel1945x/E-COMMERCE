@@ -12,7 +12,7 @@ const ProductosSame = ({data}) => {
         >
             <Card.Img 
             variant="top" 
-            src={data.images?.[0].url} 
+            src={data.images?.[0]?.url} 
             style={{height: 200, objectFit: 'contain', marginTop: 20}}
             />
             <hr/>
