@@ -26,7 +26,7 @@ export const getFilterCategoryProductsThunk = id => (dispatch) => {
     dispatch(setLoader(true))
 
     axios
-        .get(`https://api-ecommerce-1.onrender.com/products?categoryId=${id}`)
+        .get(`https://e-commerce-api-v2.academlo.tech/api/v1/products?categoryId=${id}`)
         .then(resp => dispatch(setProducts(resp.data)))
         .catch(error => console.log(error))
         .finally(() => dispatch(setLoader(false)))
@@ -36,7 +36,7 @@ export const getFilterTitleProductsThunk = title => (dispatch) => {
     dispatch(setLoader(true))
 
     axios
-        .get(`https://api-ecommerce-1.onrender.com/products?title=${title}`)
+        .get(`https://e-commerce-api-v2.academlo.tech/api/v1/products?title=${title}`)
         .then(resp => dispatch(setProducts(resp.data)))
         .catch(error => console.log(error))
         .finally(() => dispatch(setLoader(false)))

@@ -9,7 +9,7 @@ const Purchases = () => {
 
     useEffect(() => {
         axios
-            .get("https://api-ecommerce-1.onrender.com/purchases", {
+            .get("https://e-commerce-api-v2.academlo.tech/api/v1/purchases", {
                 headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
             })
             .then(resp => setPurchase(resp.data))

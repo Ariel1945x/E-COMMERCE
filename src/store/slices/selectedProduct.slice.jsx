@@ -14,7 +14,7 @@ export const selectedSlice = createSlice({
 
 export const getProductsSelected = () => (dispatch) => {
     axios
-        .get("https://api-ecommerce-1.onrender.com/cart", {
+        .get("https://e-commerce-api-v2.academlo.tech/api/v1/cart", {
             headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
         })
         .then(resp => dispatch( setSelectedProduct(resp.data) ))
@@ -23,7 +23,7 @@ export const getProductsSelected = () => (dispatch) => {
 
 export const addProductSelected = data => (dispatch) => {
     axios
-        .post("https://api-ecommerce-1.onrender.com/cart", data, {
+        .post("https://e-commerce-api-v2.academlo.tech/api/v1/cart", data, {
             headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
         })
         .then(() => dispatch( getProductsSelected() ))
@@ -39,7 +39,7 @@ export const putProductsSelected = (id, quantity) => (dispatch) => {
     dispatch(setLoader(true))
 
     axios
-        .put(`https://api-ecommerce-1.onrender.com/cart/${id}`, data, {
+        .put(`https://e-commerce-api-v2.academlo.tech/api/v1/cart/${id}`, data, {
             headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
         })
         .then(() => dispatch( getProductsSelected() ))
@@ -52,7 +52,7 @@ export const deleteProductsSelected = id => (dispatch) => {
     dispatch(setLoader(true))
 
     axios
-        .delete(`https://api-ecommerce-1.onrender.com/cart/${id}`, {
+        .delete(`https://e-commerce-api-v2.academlo.tech/api/v1/cart/${id}`, {
             headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
         })
         .then(() => dispatch( getProductsSelected() ))
@@ -62,7 +62,7 @@ export const deleteProductsSelected = id => (dispatch) => {
 
 export const purchasesProductThunk = () => (dispatch) => {
     axios
-        .post("https://api-ecommerce-1.onrender.com/purchases", {}, {
+        .post("https://e-commerce-api-v2.academlo.tech/api/v1/purchases", {}, {
             headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
         })
         .then(() => dispatch( getProductsSelected() ))

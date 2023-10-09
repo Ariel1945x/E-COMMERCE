@@ -12,7 +12,7 @@ const Login = () => {
 
     const submit = data => {
         axios 
-        .post("https://api-ecommerce-1.onrender.com/login", data)
+        .post("https://e-commerce-api-v2.academlo.tech/api/v1/login", data)
         .then(resp => {
             localStorage.setItem("token", resp.data.token)
             navigate("/")
